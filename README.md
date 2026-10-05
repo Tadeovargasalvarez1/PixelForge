@@ -75,16 +75,35 @@ manifest, favicon y `sw.js`. Está diseñado para servirse desde un subdirectori
 
 ## 🌐 Despliegue en GitHub Pages
 
-El repositorio incluye un workflow en `.github/workflows/deploy.yml` que, al hacer push a `main`
-(o `master`), instala dependencias, ejecuta **TypeScript**, ejecuta los **tests**, genera el
-**build** y publica `dist/`. Si cualquier comprobación falla, **no se publica** la build rota.
+El repositorio ya viene preparado para desplegarse automáticamente. Solo tienes que **subir el
+código a `main` (o `master`)** y el workflow `.github/workflows/deploy.yml` hará el resto:
+instala dependencias, ejecuta **TypeScript**, ejecuta los **tests**, genera el **build** y publica
+`dist/` en GitHub Pages. Si cualquier comprobación falla, **no se publica** una build rota.
 
-1. Sube el proyecto a GitHub.
-2. Ve a **Settings → Pages** y selecciona **Source: GitHub Actions**.
-3. Haz push a `main`. La app se publicará en `https://<usuario>.github.io/<repo>/`.
+Pasos:
 
-El build usa `base: './'` y `HashRouter`, por lo que funciona en rutas de proyecto de GitHub Pages
-sin configuración adicional.
+```bash
+git add .
+git commit -m "PixelForge"
+git branch -M main
+git remote add origin https://github.com/<USUARIO>/<REPO>.git
+git push -u origin main
+```
+
+El workflow intenta **habilitar Pages automáticamente** (`actions/configure-pages` con
+`enablement: true`). Si tu organización lo bloquea, hazlo una sola vez de forma manual:
+
+> **Settings → Pages → Build and deployment → Source: GitHub Actions**
+
+Resultado: `https://<USUARIO>.github.io/<REPO>/`.
+
+Archivos relevantes ya incluidos:
+- `.github/workflows/deploy.yml` — CI/CD de despliegue.
+- `public/.nojekyll` — evita el procesado de Jekyll.
+- `vite.config.ts` con `base: './'` y **HashRouter** — funciona en el subdirectorio del repo sin
+  rewrites del servidor.
+- `public/manifest.webmanifest` + `public/sw.js` con rutas relativas — PWA base-aware.
+- `package-lock.json` — requerido por `npm ci` en CI.
 
 ---
 
