@@ -1,0 +1,101 @@
+:root {
+  /* Brand */
+  --brand-1: #7c5cff;
+  --brand-2: #4ea8ff;
+  --brand-3: #22d3ee;
+  --brand-gradient: linear-gradient(135deg, var(--brand-1), var(--brand-2) 55%, var(--brand-3));
+
+  /* Accent (theme aware) */
+  --accent: #7c5cff;
+  --accent-hover: #8f73ff;
+  --accent-soft: rgba(124, 92, 255, 0.14);
+  --accent-contrast: #ffffff;
+
+  /* Status */
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --info: #60a5fa;
+
+  /* Radii */
+  --r-xs: 6px;
+  --r-sm: 9px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-full: 999px;
+
+  /* Spacing scale */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 56px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur: 200ms;
+  --dur-slow: 300ms;
+
+  /* Layout */
+  --topbar-h: 56px;
+  --toolbar-w: 56px;
+  --panel-w: 288px;
+  --z-toast: 2000;
+  --z-modal: 1500;
+  --z-drawer: 1400;
+  --z-dropdown: 1200;
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Dark (default) */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0b0d12;
+  --bg-elevated: #10131b;
+  --surface: #141823;
+  --surface-2: #1a1f2e;
+  --surface-3: #222839;
+  --border: #242b3d;
+  --border-strong: #333c54;
+  --text: #eef1f8;
+  --text-muted: #9aa3b8;
+  --text-dim: #6b7488;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --overlay: rgba(4, 6, 10, 0.72);
+  --checker-a: #1b2030;
+  --checker-b: #232a3c;
+}
+
+/* Light */
+[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f5f6fa;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f2f3f8;
+  --surface-3: #e9ebf3;
+  --border: #e2e4ee;
+  --border-strong: #cdd1e0;
+  --text: #14171f;
+  --text-muted: #5b6273;
+  --text-dim: #8a90a2;
+  --shadow-sm: 0 1px 2px rgba(20, 24, 40, 0.08);
+  --shadow: 0 10px 28px rgba(20, 24, 40, 0.12);
+  --shadow-lg: 0 26px 60px rgba(20, 24, 40, 0.16);
+  --overlay: rgba(20, 24, 40, 0.4);
+  --checker-a: #e7e9f1;
+  --checker-b: #f6f7fb;
+  --accent-contrast: #ffffff;
+}

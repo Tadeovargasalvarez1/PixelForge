@@ -1,0 +1,19 @@
+{
+  "name": "PixelForge — Editor de imágenes",
+  "short_name": "PixelForge",
+  "description": "Suite profesional de edición de imágenes directamente en tu navegador.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b0d12",
+  "theme_color": "#0b0d12",
+  "lang": "es",
+  "categories": ["photo", "graphics", "productivity"],
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "./icons/icon-512.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
