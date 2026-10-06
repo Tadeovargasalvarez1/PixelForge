@@ -203,8 +203,8 @@ const defaultText: TextData = {
 
 const defaultShape: ShapeData = {
   shape: 'rect',
-  fill: '#7c5cff',
-  stroke: '#ffffff',
+  fill: '#00827c',
+  stroke: '#edfffe',
   strokeWidth: 0,
   width: 240,
   height: 160,
@@ -216,7 +216,7 @@ export const useEditor = create<EditorState>((set, get) => ({
   activeId: null,
   tool: 'move',
   renderVersion: 0,
-  brush: { color: '#7c5cff', size: 32, hardness: 80, opacity: 100 },
+  brush: { color: '#cbfffc', size: 32, hardness: 80, opacity: 100 },
   textDefaults: { ...defaultText },
   shapeDefaults: { ...defaultShape },
   viewport: { scale: 1, x: 0, y: 0 },

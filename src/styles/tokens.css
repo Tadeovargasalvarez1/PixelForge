@@ -1,31 +1,50 @@
 :root {
-  /* Brand */
-  --brand-1: #7c5cff;
-  --brand-2: #4ea8ff;
-  --brand-3: #22d3ee;
-  --brand-gradient: linear-gradient(135deg, var(--brand-1), var(--brand-2) 55%, var(--brand-3));
+  /* ---- Auros palette ---- */
+  --auros-abyss: #012624;
+  --auros-deep: #011d1c;
+  --auros-kelp: #003734;
+  --auros-mist: #edfffe;
+  --auros-platinum: #ffffff;
+  --auros-silver: #bbc7c6;
+  --auros-ash: #f2f2f2;
+  --auros-slate: #707777;
+  --auros-lavender: #fde9ff;
+  --auros-teal: #00827c;
+  --auros-cyan: #cbfffc;
 
-  /* Accent (theme aware) */
-  --accent: #7c5cff;
-  --accent-hover: #8f73ff;
-  --accent-soft: rgba(124, 92, 255, 0.14);
-  --accent-contrast: #ffffff;
+  /* ---- Signature gradients ---- */
+  --gradient-aurora: linear-gradient(
+    90deg,
+    #cbfffc 0%,
+    #edfffe 26.25%,
+    #fffdfa 47.57%,
+    #fad1ff 88.96%
+  );
+  --gradient-bioluminescent: linear-gradient(90deg, #00827c 0%, #cbfffc 100%);
+  --brand-gradient: var(--gradient-aurora);
+  --on-gradient: #06211f;
 
-  /* Status */
-  --success: #34d399;
-  --warning: #fbbf24;
-  --danger: #f87171;
-  --info: #60a5fa;
+  /* ---- Accent (theme aware) ---- */
+  --accent: #cbfffc;
+  --accent-hover: #edfffe;
+  --accent-soft: rgba(0, 130, 124, 0.2);
+  --accent-contrast: #06211f;
 
-  /* Radii */
-  --r-xs: 6px;
-  --r-sm: 9px;
-  --r-md: 12px;
+  /* ---- Status (kept inside the teal/pink family) ---- */
+  --success: #6fe0c2;
+  --warning: #fad1ff;
+  --danger: #ff9fb2;
+  --info: #cbfffc;
+
+  /* ---- Radii (Auros: small 6, cards 16) ---- */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 8px;
   --r-lg: 16px;
-  --r-xl: 22px;
+  --r-xl: 16px;
   --r-full: 999px;
 
-  /* Spacing scale */
+  /* ---- Spacing (base 4px) ---- */
   --sp-1: 4px;
   --sp-2: 8px;
   --sp-3: 12px;
@@ -36,15 +55,15 @@
   --sp-10: 40px;
   --sp-12: 56px;
 
-  /* Motion */
+  /* ---- Motion ---- */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-fast: 150ms;
   --dur: 200ms;
   --dur-slow: 300ms;
 
-  /* Layout */
-  --topbar-h: 56px;
+  /* ---- Layout ---- */
+  --topbar-h: 64px;
   --toolbar-w: 56px;
   --panel-w: 288px;
   --z-toast: 2000;
@@ -52,50 +71,62 @@
   --z-drawer: 1400;
   --z-dropdown: 1200;
 
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-    sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: 'Matter', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'JetBrains Mono', SFMono-Regular, Menlo, monospace;
 }
 
-/* Dark (default) */
+/* ================= Dark — Auros ================= */
 [data-theme='dark'] {
   color-scheme: dark;
-  --bg: #0b0d12;
-  --bg-elevated: #10131b;
-  --surface: #141823;
-  --surface-2: #1a1f2e;
-  --surface-3: #222839;
-  --border: #242b3d;
-  --border-strong: #333c54;
-  --text: #eef1f8;
-  --text-muted: #9aa3b8;
-  --text-dim: #6b7488;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
-  --overlay: rgba(4, 6, 10, 0.72);
-  --checker-a: #1b2030;
-  --checker-b: #232a3c;
+  --bg: var(--auros-abyss);
+  --bg-elevated: var(--auros-deep);
+  --surface: var(--auros-kelp);
+  --surface-2: rgba(255, 255, 255, 0.05);
+  --surface-3: rgba(255, 255, 255, 0.09);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --text: var(--auros-platinum);
+  --text-muted: var(--auros-silver);
+  --text-dim: var(--auros-slate);
+
+  /* Auros: no drop shadows — depth comes from the teal surface stack */
+  --shadow-sm: none;
+  --shadow: none;
+  --shadow-lg: none;
+  --overlay: rgba(1, 20, 19, 0.74);
+  --checker-a: #013330;
+  --checker-b: var(--auros-abyss);
+
+  --accent: var(--auros-cyan);
+  --accent-hover: var(--auros-mist);
+  --accent-soft: rgba(0, 130, 124, 0.22);
+  --accent-contrast: #06211f;
 }
 
-/* Light */
+/* ================= Light — Mist adaptation ================= */
 [data-theme='light'] {
   color-scheme: light;
-  --bg: #f5f6fa;
-  --bg-elevated: #ffffff;
-  --surface: #ffffff;
-  --surface-2: #f2f3f8;
-  --surface-3: #e9ebf3;
-  --border: #e2e4ee;
-  --border-strong: #cdd1e0;
-  --text: #14171f;
-  --text-muted: #5b6273;
-  --text-dim: #8a90a2;
-  --shadow-sm: 0 1px 2px rgba(20, 24, 40, 0.08);
-  --shadow: 0 10px 28px rgba(20, 24, 40, 0.12);
-  --shadow-lg: 0 26px 60px rgba(20, 24, 40, 0.16);
-  --overlay: rgba(20, 24, 40, 0.4);
-  --checker-a: #e7e9f1;
-  --checker-b: #f6f7fb;
+  --bg: var(--auros-mist);
+  --bg-elevated: var(--auros-ash);
+  --surface: var(--auros-platinum);
+  --surface-2: rgba(1, 38, 36, 0.05);
+  --surface-3: rgba(1, 38, 36, 0.09);
+  --border: rgba(1, 38, 36, 0.12);
+  --border-strong: rgba(1, 38, 36, 0.22);
+  --text: var(--auros-abyss);
+  --text-muted: #4d5f5d;
+  --text-dim: var(--auros-slate);
+
+  --shadow-sm: none;
+  --shadow: none;
+  --shadow-lg: none;
+  --overlay: rgba(1, 38, 36, 0.35);
+  --checker-a: #d7e9e7;
+  --checker-b: var(--auros-mist);
+
+  --accent: var(--auros-teal);
+  --accent-hover: #006f6a;
+  --accent-soft: rgba(0, 130, 124, 0.12);
   --accent-contrast: #ffffff;
 }

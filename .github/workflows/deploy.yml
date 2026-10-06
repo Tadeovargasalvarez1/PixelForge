@@ -1,4 +1,4 @@
-name: Build and Deploy to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
           node-version: 20
           cache: npm
 
-      # Habilita GitHub Pages automaticamente (source: GitHub Actions).
+      # Habilita GitHub Pages automáticamente (source: GitHub Actions) si aún no lo está.
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:

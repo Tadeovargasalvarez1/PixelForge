@@ -30,6 +30,7 @@ const QUICK_ACTIONS = [
 import { useImageLoader } from '../hooks/useImageLoader';
 import { useImageStore } from '../store/imageStore';
 import { FileDropzone } from '../components/FileDropzone';
+import { ParticleOrb } from '../components/ParticleOrb';
 import { TOOLS } from '../features/toolsCatalog';
 
 export function Home() {
@@ -51,6 +52,8 @@ export function Home() {
     <div className="page-scroll">
       <section className="hero">
         <div className="hero-glow" />
+        <ParticleOrb />
+        <div className="hero-vignette" />
         <div className="container">
           <div className="badge badge-accent animate-in" style={{ marginBottom: 20 }}>
             <Sparkles size={13} /> 100% en tu navegador · Sin subir archivos
